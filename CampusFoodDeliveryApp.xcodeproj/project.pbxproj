@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4394F47C0B3DF3B9ADFF0D71 /* Pods_CampusFoodDeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DB374B194E2BECEADC4E79 /* Pods_CampusFoodDeliveryApp.framework */; };
+		94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */; };
+		948059CB2131B6070013F642 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948059CA2131B6070013F642 /* signupViewController.swift */; };
 		94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */; };
 		94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEBE2121134BA200BDABE5 /* ViewController.swift */; };
 		94EEBE2521134BA200BDABE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EEBE2321134BA200BDABE5 /* Main.storyboard */; };
@@ -30,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15DB374B194E2BECEADC4E79 /* Pods_CampusFoodDeliveryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusFoodDeliveryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8035679256A9F3E5296709A7 /* Pods-CampusFoodDeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusFoodDeliveryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusFoodDeliveryApp/Pods-CampusFoodDeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schoolSelectionViewController.swift; sourceTree = "<group>"; };
+		948059CA2131B6070013F642 /* signupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
 		94EEBE1C21134BA200BDABE5 /* CampusFoodDeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFoodDeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94EEBE2121134BA200BDABE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreenViewController.swift; sourceTree = "<group>"; };
 		94EEBE462114D3E400BDABE5 /* homeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeScreenViewController.swift; sourceTree = "<group>"; };
 		94EEBE482114D6CB00BDABE5 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
+		F8AB56B698213A608DB40F3D /* Pods-CampusFoodDeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusFoodDeliveryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusFoodDeliveryApp/Pods-CampusFoodDeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4394F47C0B3DF3B9ADFF0D71 /* Pods_CampusFoodDeliveryApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		118CDBDEA88248643DF1ED4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8035679256A9F3E5296709A7 /* Pods-CampusFoodDeliveryApp.debug.xcconfig */,
+				F8AB56B698213A608DB40F3D /* Pods-CampusFoodDeliveryApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		94EEBE1321134BA200BDABE5 = {
 			isa = PBXGroup;
 			children = (
 				94EEBE1E21134BA200BDABE5 /* CampusFoodDeliveryApp */,
 				94EEBE3621134BA200BDABE5 /* CampusFoodDeliveryAppTests */,
 				94EEBE1D21134BA200BDABE5 /* Products */,
+				118CDBDEA88248643DF1ED4D /* Pods */,
+				94FD90810CCEFB03200F4FDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,8 +108,10 @@
 				94EEBE2321134BA200BDABE5 /* Main.storyboard */,
 				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
 				94EEBE462114D3E400BDABE5 /* homeScreenViewController.swift */,
-				94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */,
 				94EEBE482114D6CB00BDABE5 /* menuTableViewController.swift */,
+				94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */,
+				948059CA2131B6070013F642 /* signupViewController.swift */,
+				94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */,
 				94EEBE2121134BA200BDABE5 /* ViewController.swift */,
 				94EEBE2921134BA200BDABE5 /* Assets.xcassets */,
 				94EEBE2B21134BA200BDABE5 /* LaunchScreen.storyboard */,
@@ -108,6 +130,14 @@
 			path = CampusFoodDeliveryAppTests;
 			sourceTree = "<group>";
 		};
+		94FD90810CCEFB03200F4FDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15DB374B194E2BECEADC4E79 /* Pods_CampusFoodDeliveryApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94EEBE3C21134BA200BDABE5 /* Build configuration list for PBXNativeTarget "CampusFoodDeliveryApp" */;
 			buildPhases = (
+				300FF2B04279DB6CBAB2E2D5 /* [CP] Check Pods Manifest.lock */,
 				94EEBE1821134BA200BDABE5 /* Sources */,
 				94EEBE1921134BA200BDABE5 /* Frameworks */,
 				94EEBE1A21134BA200BDABE5 /* Resources */,
+				A30EA4CB7517BB8204E9EDF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +238,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		300FF2B04279DB6CBAB2E2D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CampusFoodDeliveryApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A30EA4CB7517BB8204E9EDF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CampusFoodDeliveryApp/Pods-CampusFoodDeliveryApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CampusFoodDeliveryApp/Pods-CampusFoodDeliveryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94EEBE1821134BA200BDABE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,9 +286,11 @@
 			files = (
 				94EEBE452114D2A600BDABE5 /* loginScreenViewController.swift in Sources */,
 				94EEBE472114D3E400BDABE5 /* homeScreenViewController.swift in Sources */,
+				948059CB2131B6070013F642 /* signupViewController.swift in Sources */,
 				94EEBE492114D6CB00BDABE5 /* menuTableViewController.swift in Sources */,
 				94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */,
 				94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */,
+				94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */,
 				94EEBE2821134BA200BDABE5 /* CampusFoodDeliveryApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,10 +442,12 @@
 		};
 		94EEBE3D21134BA200BDABE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8035679256A9F3E5296709A7 /* Pods-CampusFoodDeliveryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CampusFoodDeliveryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.CampusFoodDeliveryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,10 +458,12 @@
 		};
 		94EEBE3E21134BA200BDABE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8AB56B698213A608DB40F3D /* Pods-CampusFoodDeliveryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CampusFoodDeliveryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.CampusFoodDeliveryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

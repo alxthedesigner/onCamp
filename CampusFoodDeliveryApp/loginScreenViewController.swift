@@ -8,8 +8,18 @@
 
 import UIKit
 
-class loginScreenViewController: UIViewController {
 
+class loginScreenViewController: UIViewController {
+    
+
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
+    
+    @IBOutlet weak var changeSchoolsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,5 +33,5 @@ class loginScreenViewController: UIViewController {
     
 
    
-
+    
 }
