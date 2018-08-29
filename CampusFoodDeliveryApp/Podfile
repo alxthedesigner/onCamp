@@ -1,0 +1,6 @@
+platform :ios
+use_frameworks!
+
+target 'CampusFoodDeliveryApp' do
+  pod 'SwiftyJSON'
+end

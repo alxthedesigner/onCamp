@@ -44,11 +44,11 @@ class schoolSelectionViewController: UIViewController {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
-            
         }
     }
     
-    //MARK: School Colors
+    
+    //School Colors
     @IBAction func schoolTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let school = Schools(rawValue: title) else {
             return
@@ -82,6 +82,7 @@ class schoolSelectionViewController: UIViewController {
     @IBAction func unwindToSchoolSelect(_ sender: UIStoryboardSegue){}
     
     
+    //Set Background and text colors
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! loginScreenViewController
         
