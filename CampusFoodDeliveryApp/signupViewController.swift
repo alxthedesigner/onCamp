@@ -58,8 +58,7 @@ class signupViewController: UIViewController {
     
     
     @IBAction func submitForm(_ sender: UIButton) {
-        //Checking Fields
-        if(checkFields(school: schoolNameLabel.text! ,first: firstNameTextField.text!, last: lastNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
+        if(fieldsFilled(school: schoolNameLabel.text! ,first: firstNameTextField.text!, last: lastNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
             
             if(passwordMatch(pwd: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
                 
@@ -74,7 +73,7 @@ class signupViewController: UIViewController {
     
     
     //Functions
-    func checkFields(school: String, first: String, last: String, email: String, password: String, confirm: String) -> Bool{
+    func fieldsFilled(school: String, first: String, last: String, email: String, password: String, confirm: String) -> Bool{
         
         if(first.isEmpty || last.isEmpty || email.isEmpty || password.isEmpty || confirm.isEmpty){
             errLabel.text = "Please fill all required fields"
