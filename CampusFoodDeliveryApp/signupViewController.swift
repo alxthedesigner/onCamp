@@ -26,13 +26,7 @@ class signupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Name
-        let firstName = firstNameTextField.text
-        let lastName = lastNameTextField.text
-        let name = firstName! + lastName!
-        //Login Credintials
-        let email = emailTextField.text
-        let password = confirmPassTextField.text
+
         
         //Date Picker
         let dateFormatter = DateFormatter()
@@ -41,22 +35,7 @@ class signupViewController: UIViewController {
         
         datePicker.addTarget(self, action: #selector(dateChosen(_:)), for: .touchUpInside)
         
-
         
-        //Request Parameters
-        let parameters = [
-            "name": name,
-            "birthday": "123456",
-            "email": email,
-            "password": password,
-            //"school": school
-        ]
-        
-        //HTTP Request
-        Alamofire.request("http://myserver.com", method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                print(response)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +56,9 @@ class signupViewController: UIViewController {
         if(checkFields(first: firstNameTextField.text!, last: lastNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
             
             if(passwordMatch(pwd: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
+                
+
+                sendHTTPRequest(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, eml: emailTextField.text!, pwd: confirmPassTextField.text!)
                 
                 performSegue(withIdentifier: "toHomeSegue", sender: (Any).self)
                 
@@ -104,5 +86,26 @@ class signupViewController: UIViewController {
         }else{
             return true
         }
+    }
+    
+    
+    
+    //HTTP Request
+    func sendHTTPRequest(firstName: String, lastName: String, eml: String, pwd: String){
+        
+        let nme = firstName + lastName
+        let parameters = [
+            //"name": nme,
+            //"birthday": "123456",
+            "email": eml,
+            "password": pwd,
+            //"school": school
+        ]
+        
+        Alamofire.request("https://4f6a17aa.ngrok.io/info", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseString { response in
+                print(response)
+        }
+        
     }
 }
