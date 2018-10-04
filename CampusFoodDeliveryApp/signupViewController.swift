@@ -24,6 +24,10 @@ class signupViewController: UIViewController {
     
     @IBOutlet weak var errLabel: UILabel!
     
+    @IBOutlet var schoolButtons: [UIButton]!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,11 +41,54 @@ class signupViewController: UIViewController {
         
         
     }
+    
+    enum Schools: String{
+        case kysu = "Kentucky State University"
+        case lou = "University of Louisville"
+        case uk = "University of Kentucky"
+        
+    }
+    
+    @IBAction func schoolBtn(_ sender: Any) {
+        
+        schoolButtons.forEach{ (button) in
+            UIView.animate(withDuration: 0.3, animations:{
+    
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+    
+        }
+    }
+    
+    
+    @IBAction func schoolTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let school = Schools(rawValue: title) else {
+            return
+        }
+        
+        switch school{
+        case .kysu:
+            print("KYSU selected")
+
+        case .lou:
+            print("Louisville selected")
+            
+        case .uk:
+            print("UK selected")
+
+        default:
+            print("No school selected")
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     //Actions
     @IBAction func dateChosen(_ sender: Any) {
@@ -58,7 +105,7 @@ class signupViewController: UIViewController {
             if(passwordMatch(pwd: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
                 
 
-                sendHTTPRequest(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, eml: emailTextField.text!, pwd: confirmPassTextField.text!)
+                sendHTTPRequest(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, eml: emailTextField.text!, pwd: confirmPassTextField.text!, skool: "" )
                 
                 performSegue(withIdentifier: "toHomeSegue", sender: (Any).self)
                 
@@ -67,7 +114,7 @@ class signupViewController: UIViewController {
     }
     
     
-    //Functions
+    //MARK: Functions
     func checkFields(first: String, last: String, email: String, password: String, confirm: String) -> Bool{
         
         if(first.isEmpty || last.isEmpty || email.isEmpty || password.isEmpty || confirm.isEmpty){
@@ -91,20 +138,31 @@ class signupViewController: UIViewController {
     
     
     //HTTP Request
-    func sendHTTPRequest(firstName: String, lastName: String, eml: String, pwd: String){
+    func sendHTTPRequest(firstName: String, lastName: String, eml: String, pwd: String, skool: String){
+        
+        let header: HTTPHeaders = [
+            "Content-Type":"application/json",
+            "Accept": "application/json"
+        ]
         
         let nme = firstName + lastName
         let parameters = [
-            //"name": nme,
-            //"birthday": "123456",
+            "name": nme,
             "email": eml,
             "password": pwd,
-            //"school": school
+            "school": skool
         ]
         
-        Alamofire.request("https://4f6a17aa.ngrok.io/info", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("https://f6ee6e0a.ngrok.io/users", method: .post, parameters:
+            parameters, encoding: JSONEncoding.default, headers: header)
             .responseString { response in
-                print(response)
+                switch response.result {
+                case .success:
+                    print(response)
+                case .failure(let error):
+                    print(0,"Error")
+                }
+                //print(response)
         }
         
     }
