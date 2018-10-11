@@ -1,29 +1,45 @@
 //
 //  menuTableViewController.swift
-//  CampusFoodDeliveryApp
+//  
 //
-//  Created by Alex Stanford on 8/3/18.
-//  Copyright © 2018 Alex Stanford. All rights reserved.
+//  Created by Alex Stanford on 10/10/18.
 //
 
 import UIKit
 
-class prototypeTableViewCell: UITableViewCell{
+class Meals{
     
+    var name: String
+    var photo: UIImage?
+    var desc: String
+    var price: Double
+    
+    init?(name: String, photo: UIImage?, desc: String, price: Double) {
+
+        // Initialize stored properties.
+        self.name = name
+        self.photo = photo
+        self.desc = desc
+        self.price = price
+        
+    }
 }
 
 class menuTableViewController: UITableViewController {
 
-    
+    var items = [Meals]()
+    let identifier = "menuCellIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadMeals()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,24 +50,64 @@ class menuTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? menuItemTableViewCell else {
+            fatalError("Cell not dequeued")
+            
+        }
+        
+        let item = items[indexPath.row]
+        cell.itemLabel.text = item.name
+        cell.itemImage.image = item.photo
+        cell.descLabel.text = item.desc
+        cell.priceLabel.tag = Int(item.price as Double)
+        
         // Configure the cell...
-
+        
         return cell
     }
-    */
+    
+    private func loadMeals(){
+        
+        
+        let chiKobImage = UIImage(named: "ChickenKabobs")
+        let steKobImage = UIImage(named: "SteakKabobs")
+        let sausKobImage = UIImage(named: "SausageKabobs")
+        let shriKobImage = UIImage(named: "ShrimpKabobs")
+        let vegKobImage = UIImage(named: "VeggieKabobs")
+        
+        guard let chickenKobob = Meals(name: "Chicken Kobob", photo: chiKobImage, desc: "", price: 5.00) else{
+            fatalError("Unable to instantiate meal")
+        }
+        guard let steakKobob = Meals(name: "Steak Kobob", photo: steKobImage, desc: "", price: 7.00) else{
+            fatalError("Unable to instantiate meal")
+        }
+        guard let sausageKobob = Meals(name: "Sausage Kobob", photo: sausKobImage, desc: "", price: 5.00) else{
+            fatalError("Unable to instantiate meal")
+        }
+        guard let shrimpKobob = Meals(name: "Shrimp Kobob", photo: shriKobImage, desc: "", price: 7.00) else{
+            fatalError("Unable to instantiate meal")
+        }
+        guard let veggieKobob = Meals(name: "Veggie Kobob", photo: vegKobImage, desc: "", price: 5.00) else{
+            fatalError("Unable to instantiate meal")
+        }
+        
+        items += [chickenKobob, steakKobob, sausageKobob, shrimpKobob, veggieKobob]
+        
+        
+    }
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

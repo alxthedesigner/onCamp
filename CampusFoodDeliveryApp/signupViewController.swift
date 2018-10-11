@@ -105,7 +105,7 @@ class signupViewController: UIViewController {
             if(passwordMatch(pwd: passwordTextField.text!, confirm: confirmPassTextField.text!) == true){
                 
 
-                sendHTTPRequest(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, eml: emailTextField.text!, pwd: confirmPassTextField.text!, skool: "" )
+                postUser(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, eml: emailTextField.text!, pwd: confirmPassTextField.text!, skool: "" )
                 
                 performSegue(withIdentifier: "toHomeSegue", sender: (Any).self)
                 
@@ -138,13 +138,13 @@ class signupViewController: UIViewController {
     
     
     //HTTP Request
-    func sendHTTPRequest(firstName: String, lastName: String, eml: String, pwd: String, skool: String){
+    func postUser(firstName: String, lastName: String, eml: String, pwd: String, skool: String){
         
+        let url = "https://a2b46da8.ngrok.io/users"
         let header: HTTPHeaders = [
             "Content-Type":"application/json",
             "Accept": "application/json"
         ]
-        
         let nme = firstName + lastName
         let parameters = [
             "name": nme,
@@ -153,17 +153,40 @@ class signupViewController: UIViewController {
             "school": skool
         ]
         
-        Alamofire.request("https://f6ee6e0a.ngrok.io/users", method: .post, parameters:
+        //POST request
+        Alamofire.request(url, method: .post, parameters:
             parameters, encoding: JSONEncoding.default, headers: header)
             .responseString { response in
                 switch response.result {
                 case .success:
+                    self.getUser(eml: eml, pwd: pwd, url: url)
                     print(response)
                 case .failure(let error):
-                    print(0,"Error")
+                    print(0,"Error: \(error)")
                 }
-                //print(response)
-        }
-        
+            }
     }
+    
+    
+    
+    func getUser(eml: String, pwd: String, url: String){
+
+        let params = [
+            "email": eml,
+            "password": pwd
+        ]
+        //GET request
+        Alamofire.request(url, parameters: params).responseJSON{ response in
+            switch response.result {
+                case .success:
+                print("Successful GET request")
+                case .failure(let error):
+                    print(0,"Error: \(error)")
+            }
+            
+            //print(response)
+        }
+    }
+    
+    
 }

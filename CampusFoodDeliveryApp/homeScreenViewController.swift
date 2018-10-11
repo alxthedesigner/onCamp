@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class homeScreenViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class homeScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    }
 
 
-}
+    
