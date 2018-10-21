@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4394F47C0B3DF3B9ADFF0D71 /* Pods_CampusFoodDeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DB374B194E2BECEADC4E79 /* Pods_CampusFoodDeliveryApp.framework */; };
+		9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */; };
+		9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFE0217C04C800871AA1 /* cartTableViewController.swift */; };
 		94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */; };
 		94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */; };
 		94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE7216EB86000651C00 /* menuTableViewController.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		15DB374B194E2BECEADC4E79 /* Pods_CampusFoodDeliveryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusFoodDeliveryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8035679256A9F3E5296709A7 /* Pods-CampusFoodDeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusFoodDeliveryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusFoodDeliveryApp/Pods-CampusFoodDeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewCell.swift; sourceTree = "<group>"; };
+		9432BFE0217C04C800871AA1 /* cartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewController.swift; sourceTree = "<group>"; };
 		94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schoolSelectionViewController.swift; sourceTree = "<group>"; };
 		94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItemTableViewCell.swift; sourceTree = "<group>"; };
 		94742BE7216EB86000651C00 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menuTableViewController.swift; path = /Users/alexstanford/Desktop/Programa/Swift/onCamp/CampusFoodDeliveryApp/menuTableViewController.swift; sourceTree = "<absolute>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				94EEBE2321134BA200BDABE5 /* Main.storyboard */,
+				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
+				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
 				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
 				94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */,
 				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
@@ -294,8 +300,10 @@
 				948059CB2131B6070013F642 /* signupViewController.swift in Sources */,
 				94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */,
 				94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */,
+				9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */,
 				94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */,
 				94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */,
+				9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */,
 				94EEBE2821134BA200BDABE5 /* CampusFoodDeliveryApp.xcdatamodeld in Sources */,
 				94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */,
 			);

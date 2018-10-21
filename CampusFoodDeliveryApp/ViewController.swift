@@ -13,10 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var pricey: UILabel!
     
+    var retrieveItem : String = ""
+    var retrieveDesc : String = ""
+    var retrievePrice : Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        print(retrieveItem)
+        item.text? = retrieveItem
+        descript.text? = retrieveDesc
+        pricey.text? = String(retrievePrice)
     }
 
     override func didReceiveMemoryWarning() {
