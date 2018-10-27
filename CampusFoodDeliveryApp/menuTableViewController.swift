@@ -17,11 +17,15 @@ class menuTableViewController: UITableViewController{
     
     var getObjects = [[String:AnyObject]]()
     let identifier = "menuCellIdentifier"
-    let url = "https://0d89e01f.ngrok.io/menu"
+    let url = "https://13beb456.ngrok.io/menu"
     
+    @IBAction func viewCartPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toCartSegue", sender: Any?.self)
+    }
     var passItem : String!
     var passDesc : String!
     var passPrice : Double!
+    var passId : UUID!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +83,8 @@ class menuTableViewController: UITableViewController{
             cell?.descLabel.text = dict["description"] as? String
             cell?.priceLabel.text = String(dict["price"] as! Double)
            print(destPlace)
+                
+                //passId = dict["id"] as! UUID
           
         }
         return cell!
@@ -92,6 +98,7 @@ class menuTableViewController: UITableViewController{
             vc.retrieveItem = passItem
             vc.retrieveDesc = passDesc
             vc.retrievePrice = passPrice
+            //vc.itemId = passId
         }
     }
     
@@ -109,12 +116,16 @@ class menuTableViewController: UITableViewController{
                 
                 if self.getObjects.count > 0 {
                         self.menuTable.reloadData()
-                    }
+                }
             }
         }
-        
     }
     
+    @IBAction func dismissMenu(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+
     
     
 

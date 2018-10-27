@@ -11,6 +11,7 @@
 		9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */; };
 		9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFE0217C04C800871AA1 /* cartTableViewController.swift */; };
 		94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */; };
+		9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */; };
 		94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */; };
 		94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE7216EB86000651C00 /* menuTableViewController.swift */; };
 		948059CB2131B6070013F642 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948059CA2131B6070013F642 /* signupViewController.swift */; };
@@ -41,6 +42,7 @@
 		9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewCell.swift; sourceTree = "<group>"; };
 		9432BFE0217C04C800871AA1 /* cartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewController.swift; sourceTree = "<group>"; };
 		94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schoolSelectionViewController.swift; sourceTree = "<group>"; };
+		9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItemTableViewCell.swift; sourceTree = "<group>"; };
 		94742BE7216EB86000651C00 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menuTableViewController.swift; path = /Users/alexstanford/Desktop/Programa/Swift/onCamp/CampusFoodDeliveryApp/menuTableViewController.swift; sourceTree = "<absolute>"; };
 		948059CA2131B6070013F642 /* signupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
 				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
 				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
+				9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */,
 				94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */,
 				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
 				94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94EEBE452114D2A600BDABE5 /* loginScreenViewController.swift in Sources */,
+				9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */,
 				94EEBE472114D3E400BDABE5 /* homeScreenViewController.swift in Sources */,
 				948059CB2131B6070013F642 /* signupViewController.swift in Sources */,
 				94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */,

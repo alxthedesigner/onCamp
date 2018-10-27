@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     @IBOutlet weak var item: UILabel!
     @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var pricey: UILabel!
     
+    
     var retrieveItem : String = ""
     var retrieveDesc : String = ""
     var retrievePrice : Double = 0
+    //var itemId = UUID()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Assigning retrived items to current labels
         print(retrieveItem)
         item.text? = retrieveItem
         descript.text? = retrieveDesc
@@ -31,6 +35,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    @IBAction func addToCart(_ sender: UIButton) {
+        CoreDataHandler.saveProduct(descript: retrieveDesc, item: retrieveItem, price: retrievePrice)
+        
+    }
+    
 }
+
+
 
