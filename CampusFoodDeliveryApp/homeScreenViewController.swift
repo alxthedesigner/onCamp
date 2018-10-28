@@ -14,7 +14,6 @@ class homeScreenViewController: UIViewController {
     @IBOutlet var restaurantCollection: [UIButton]!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

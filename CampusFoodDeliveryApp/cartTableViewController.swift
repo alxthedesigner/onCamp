@@ -15,7 +15,8 @@ class cartTableViewController: UITableViewController{
     @IBOutlet var cartTable: UITableView!
     var cartIdentifier = "cartCellIdentifier"
     
-    var productList:[ProductMO]? = nil
+    //var productList:[ProductMO]? = nil
+    var productList = CoreDataHandler.fetchProduct()
     
     var passItem : String!
     var passDesc : String!
@@ -47,7 +48,7 @@ class cartTableViewController: UITableViewController{
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        productList = CoreDataHandler.fetchProduct()
+        //productList = CoreDataHandler.fetchProduct()
         return productList!.count
     }
 
@@ -56,30 +57,33 @@ class cartTableViewController: UITableViewController{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cartIdentifier, for: indexPath) as? cartTableViewCell
         
-        productList = CoreDataHandler.fetchProduct()
+        //productList = CoreDataHandler.fetchProduct()
         let prod = productList![indexPath.row]
         
         //CoreDataHandler.clearAllProducts(ent: "Product")
         
         cell!.cartItemLabel.text = prod.item
         cell!.cartPriceLabel.text = String(prod.price)
+        //cell!.removeItemButton.addTarget(self, action: #selector(removePressed(_:)), for: .touchUpInside)
         return cell!
     }
     
-    
-    
-    /*func getProducts(){
-   //productList = CoreDataHandler.fetchProduct()
-        for i in productList!{
-            i.descript = passDesc
-            i.item = passItem
-            i.price = passPrice
-            //counter+=1
+    //Swipe-to-Delete
+    /*override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            
+            var obj = CoreDataHandler.fetchProduct()
+            self.productList?.remove(at: indexPath.row)
+            self.cartTable.deleteRows(at: [indexPath], with: .top)
+            self.counter -= 1
+            
+            print(self.productList as Any)
         }
-        //couter = (productList?.count)!
+        return [delete]
     }*/
     
-    
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == ""){
@@ -99,21 +103,25 @@ class cartTableViewController: UITableViewController{
         // Return false if you do not want the specified item to be editable.
         return true
     }
+     */
  
 
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+ 
+            //productList = CoreDataHandler.fetchProduct()
+            CoreDataHandler.deleteProduct()
+            productList!.remove(at: indexPath.row)
+            cartTable.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
     }
+ 
     
 
-
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

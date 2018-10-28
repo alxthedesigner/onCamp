@@ -196,6 +196,14 @@
                                     <action selector="restaurantChoiceWithSender:" destination="ReR-u6-IJ9" eventType="touchUpInside" id="rAT-IB-T3H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KP2-eg-KYc">
+                                <rect key="frame" x="152" y="537" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Cart"/>
+                                <connections>
+                                    <segue destination="Ck0-9q-clA" kind="presentation" id="XJI-aR-7dm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6sx-6n-DYr"/>
@@ -277,7 +285,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="9vC-KO-QbT">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aLo-6A-2eh"/>
-                        <barButtonItem key="leftBarButtonItem" title="Home" id="dII-dh-gYT">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="dII-dh-gYT">
                             <connections>
                                 <action selector="dismissMenu:" destination="S32-dV-oZV" id="CLP-lN-75Q"/>
                             </connections>
@@ -401,11 +409,6 @@
                                             <rect key="frame" x="175" y="-1" width="129" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-QE-A1Z">
-                                            <rect key="frame" x="309" y="29" width="55" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Remove"/>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -425,7 +428,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2N-VG-UzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5653.6000000000004" y="1617.8410794602701"/>
+            <point key="canvasLocation" x="3729" y="1639"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iXC-mC-upG">
@@ -449,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABY-dV-d9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="1893"/>
+            <point key="canvasLocation" x="2993" y="2124"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r5M-KB-nHl">
@@ -464,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiR-oi-oR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4668" y="1618"/>
+            <point key="canvasLocation" x="4668" y="2186"/>
         </scene>
         <!--Login Screen View Controller-->
         <scene sceneID="tkP-92-uGD">
@@ -929,4 +932,7 @@
     <resources>
         <image name="KSUlogo" width="512" height="360"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3jN-iT-MU4"/>
+    </inferredMetricsTieBreakers>
 </document>

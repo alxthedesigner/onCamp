@@ -17,7 +17,7 @@ class menuTableViewController: UITableViewController{
     
     var getObjects = [[String:AnyObject]]()
     let identifier = "menuCellIdentifier"
-    let url = "https://13beb456.ngrok.io/menu"
+    let url = "https://48309c31.ngrok.io/menu"
     
     @IBAction func viewCartPressed(_ sender: Any) {
         performSegue(withIdentifier: "toCartSegue", sender: Any?.self)
@@ -78,15 +78,15 @@ class menuTableViewController: UITableViewController{
         
         var dict = getObjects[indexPath.row]
         //RESTAURANTS
-            if(dict["restaurant"] as! String == destPlace){
+        //if(dict["restaurant"] as! String == destPlace){
             cell?.itemLabel.text = dict["item"] as? String
             cell?.descLabel.text = dict["description"] as? String
             cell?.priceLabel.text = String(dict["price"] as! Double)
-           print(destPlace)
+            print(destPlace)
                 
                 //passId = dict["id"] as! UUID
-          
-        }
+            //}
+        
         return cell!
         
     }

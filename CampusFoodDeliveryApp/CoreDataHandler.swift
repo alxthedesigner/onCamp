@@ -58,8 +58,34 @@ class CoreDataHandler: NSObject {
         
     }
     
+    
+    
+    //Delete Single Product
+    class func deleteProduct(){
+        let context = objectContext()
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            let deleteThis = try context.fetch(request)
+
+            for obj in deleteThis as! [NSManagedObject] {
+            context.delete(obj)
+            }
+        }catch{
+            fatalError()
+        }
+        
+        do{
+            try context.save()
+        }catch{
+            print(fatalError())
+        }
+    }
+    
+    
     //Clear All Products
-    class func clearAllProducts(ent: String){
+   /* class func clearAllProducts(ent: String){
         let context = objectContext()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: ent)
         request.returnsObjectsAsFaults = false
@@ -76,27 +102,6 @@ class CoreDataHandler: NSObject {
         }catch let error {
             print("Error: \(error)")
         }
-    }
-    
-    
-    //Delete Single Product
-    class func deleteProduct(){
-        let context = objectContext()
-        //var obj:[ProductMO]? = nil
-        
-        do {
-            let object = try context.fetch(ProductMO.fetchRequest())
-            for ob in object{
-                objectContext().delete((ob as? NSManagedObject)!)
-                print("Product Deleted")
-            }
-        }catch let error {
-            print("Error: \(error)")
-        }
-        
-    }
-    
-    //Update table
-    
+    }*/
     
 }

@@ -12,7 +12,7 @@ import Alamofire
 
 class signupViewController: UIViewController {
     
-    let url = "https://6fc60b57.ngrok.io/users"
+    let url = "https://48309c31.ngrok.io/users"
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -142,7 +142,6 @@ class signupViewController: UIViewController {
     //HTTP Request
     func postUser(firstName: String, lastName: String, eml: String, pwd: String, skool: String){
         
-        //let url = "https://6fc60b57.ngrok.io/users"
         let header: HTTPHeaders = [
             "Content-Type":"application/json",
             "Accept": "application/json"
@@ -170,13 +169,12 @@ class signupViewController: UIViewController {
     }
     
     
-    
     func getUser(eml: String, pwd: String, url: String){
-
         let params = [
             "email": eml,
             "password": pwd
         ]
+        
         //GET request
         Alamofire.request(url, parameters: params).responseJSON{ response in
             switch response.result {
