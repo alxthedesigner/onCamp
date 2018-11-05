@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_Kyxl0WACdSbGpj5n8hB7y93q"
+        
         return true
     }
+    //CITE
+    // This method is where you handle URL opens if you are using a native scheme URLs (eg "yourexampleapp://")
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let stripeHandled = Stripe.handleURLCallback(with: url)
+        
+        if (stripeHandled) {
+            return true
+        }
+        else {
+            // This was not a stripe url, do whatever url handling your app
+            // normally does, if any.
+        }
+        
+        return false
+    }
+    
+    // This method is where you handle URL opens if you are using univeral link URLs (eg "https://example.com/stripe_ios_callback")
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let url = userActivity.webpageURL {
+                let stripeHandled = Stripe.handleURLCallback(with: url)
+                
+                if (stripeHandled) {
+                    return true
+                }
+                else {
+                    // This was not a stripe url, do whatever url handling your app
+                    // normally does, if any.
+                }
+            }
+            
+        }
+        return false
+    }
+    //END CITATION
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -46,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+        var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the

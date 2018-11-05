@@ -91,7 +91,7 @@ class schoolSelectionViewController: UIViewController {
         //TEXT COLOR
         destinationVC.changeSchoolsButton.setTitleColor(textColor, for: .normal)
         destinationVC.forgotPasswordButton.setTitleColor(textColor, for: .normal)
-        destinationVC.loginButton.setTitleColor(textColor, for: .normal)
+       // destinationVC.loginButton.setTitleColor(textColor, for: .normal)
     }
     
 

@@ -10,8 +10,6 @@ import UIKit
 
 class cartTableViewController: UITableViewController{
     
-    //viewController.delegate = self
-    
     @IBOutlet var cartTable: UITableView!
     var cartIdentifier = "cartCellIdentifier"
     
@@ -52,38 +50,31 @@ class cartTableViewController: UITableViewController{
         return productList!.count
     }
 
-    
+    var prod = ProductMO()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cartIdentifier, for: indexPath) as? cartTableViewCell
         
-        //productList = CoreDataHandler.fetchProduct()
-        let prod = productList![indexPath.row]
-        
-        //CoreDataHandler.clearAllProducts(ent: "Product")
+        prod = productList![indexPath.row]
+
         
         cell!.cartItemLabel.text = prod.item
         cell!.cartPriceLabel.text = String(prod.price)
-        //cell!.removeItemButton.addTarget(self, action: #selector(removePressed(_:)), for: .touchUpInside)
+        
         return cell!
     }
+ 
     
-    //Swipe-to-Delete
-    /*override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    @IBAction func submitOrderButton(_ sender: UIBarButtonItem) {
         
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            
-            var obj = CoreDataHandler.fetchProduct()
-            self.productList?.remove(at: indexPath.row)
-            self.cartTable.deleteRows(at: [indexPath], with: .top)
-            self.counter -= 1
-            
-            print(self.productList as Any)
-        }
-        return [delete]
-    }*/
+        let product = prod.item
+        let price = prod.price
+        let checkoutViewController = CheckoutViewController(product: (product)!,
+                                                            price: Int(price),
+                                                            settings: SettingsViewController().settings)
+        self.navigationController?.pushViewController(checkoutViewController, animated: true)
+    }
     
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == ""){

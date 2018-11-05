@@ -12,7 +12,10 @@ import Alamofire
 
 class signupViewController: UIViewController {
     
-    let url = "https://48309c31.ngrok.io/users"
+    //let url = "https://48309c31.ngrok.io/users"
+    let getUrlVC = loginScreenViewController()
+    var userObjects = [[String:AnyObject]]()
+    
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -154,13 +157,14 @@ class signupViewController: UIViewController {
             "school": skool
         ]
         
+        let url = getUrlVC.url
         //POST request
         Alamofire.request(url, method: .post, parameters:
             parameters, encoding: JSONEncoding.default, headers: header)
             .responseString { response in
                 switch response.result {
                 case .success:
-                    self.getUser(eml: eml, pwd: pwd, url: self.url)
+                    self.getUser(eml: eml, pwd: pwd, url: url)
                     print(response)
                 case .failure(let error):
                     print(0,"Error: \(error)")
@@ -170,21 +174,28 @@ class signupViewController: UIViewController {
     
     
     func getUser(eml: String, pwd: String, url: String){
-        let params = [
-            "email": eml,
-            "password": pwd
-        ]
-        
-        //GET request
-        Alamofire.request(url, parameters: params).responseJSON{ response in
+        let url = getUrlVC.url
+        Alamofire.request(url).authenticate(user: eml, password: pwd).responseJSON{ response in
             switch response.result {
-                case .success:
-                print("Successful GET request")
-                case .failure(let error):
-                    print(0,"Error: \(error)")
+            case .success:
+                let jsonRes = JSON(response.result.value!)
+                
+                if let data = jsonRes.arrayObject {
+                    self.userObjects = data as! [[String:AnyObject]]
+                }
+                
+                for i in self.userObjects{
+                    let value = (i["email"]! as! String)
+                    if(value == eml){
+                        print("Successful GET request")
+                        //self.performSegue(withIdentifier: "loginToHomeSegue", sender: Any?.self)
+                    }
+                }
+                
+            case .failure(let error):
+                print("Login Failed")
+                print(0,"Error: \(error)")
             }
-            
-            //print(response)
         }
     }
     

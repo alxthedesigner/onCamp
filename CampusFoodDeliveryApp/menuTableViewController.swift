@@ -17,7 +17,7 @@ class menuTableViewController: UITableViewController{
     
     var getObjects = [[String:AnyObject]]()
     let identifier = "menuCellIdentifier"
-    let url = "https://48309c31.ngrok.io/menu"
+    let url = "https://94c3f9ab.ngrok.io/menu"
     
     @IBAction func viewCartPressed(_ sender: Any) {
         performSegue(withIdentifier: "toCartSegue", sender: Any?.self)
@@ -107,11 +107,12 @@ class menuTableViewController: UITableViewController{
     func getMenuItems(){
         Alamofire.request(url).responseJSON{ response -> Void in
             if((response.result.value) != nil) {
-                let jsonVar = JSON(response.result.value!)
-                print(jsonVar)
+                let jsonRes = JSON(response.result.value!)
+                print(jsonRes)
                 
-                if let data = jsonVar.arrayObject {
+                if let data = jsonRes.arrayObject {
                     self.getObjects = data as! [[String:AnyObject]]
+                    
                 }
                 
                 if self.getObjects.count > 0 {
