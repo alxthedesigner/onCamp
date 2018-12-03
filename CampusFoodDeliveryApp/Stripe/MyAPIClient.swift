@@ -49,12 +49,18 @@ class MyAPIClient: NSObject, STPEphemeralKeyProvider {
         }
     }
 
+    //func createCustomer
+    
+    var apiV = "2018-10-31"
+    var bUrl : URL = URL(string :"https://api.stripe.com")!
     //MARK: Create Customer
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
-        let url = self.baseURL.appendingPathComponent("ephemeral_keys")
+        //let url1 = self.baseURL.appendingPathComponent("new_customer")
+        
+        let url = self.bUrl.appendingPathComponent("ephemeral_keys")
         Alamofire.request(url, method: .post, parameters: [
-            "api_version": apiVersion,
-            "email": ""
+            "api_version": apiV,
+            "customer_id": "cus_DvNoTjVe3rmkQw"
             ])
             .validate(statusCode: 200..<300)
             .responseJSON { responseJSON in

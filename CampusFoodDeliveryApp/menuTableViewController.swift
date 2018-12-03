@@ -17,7 +17,7 @@ class menuTableViewController: UITableViewController{
     
     var getObjects = [[String:AnyObject]]()
     let identifier = "menuCellIdentifier"
-    let url = "https://94c3f9ab.ngrok.io/menu"
+    let url = "https://889584a4.ngrok.io/menu"
     
     @IBAction func viewCartPressed(_ sender: Any) {
         performSegue(withIdentifier: "toCartSegue", sender: Any?.self)

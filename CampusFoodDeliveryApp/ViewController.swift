@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var retrieveDesc : String = ""
     var retrievePrice : Double = 0
     //var itemId = UUID()
+    @IBOutlet weak var addedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class ViewController: UIViewController {
     
     @IBAction func addToCart(_ sender: UIButton) {
         CoreDataHandler.saveProduct(descript: retrieveDesc, item: retrieveItem, price: retrievePrice)
+        
+        addedLabel.text! = "Added to Cart!"
+        
         
     }
     

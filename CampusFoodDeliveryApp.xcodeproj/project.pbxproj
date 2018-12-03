@@ -11,17 +11,12 @@
 		9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */; };
 		9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFE0217C04C800871AA1 /* cartTableViewController.swift */; };
 		94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */; };
+		946BC2F221B45EC1009E3FA3 /* mapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */; };
 		9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */; };
 		94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */; };
 		94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE7216EB86000651C00 /* menuTableViewController.swift */; };
 		948059CB2131B6070013F642 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948059CA2131B6070013F642 /* signupViewController.swift */; };
-		94882B99218E075800AFFC22 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882B98218E075800AFFC22 /* MyAPIClient.swift */; };
-		94882B9F218E137D00AFFC22 /* BrowseProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882B9B218E137C00AFFC22 /* BrowseProductsViewController.swift */; };
-		94882BA0218E137D00AFFC22 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882B9C218E137C00AFFC22 /* Buttons.swift */; };
-		94882BA1218E137D00AFFC22 /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882B9D218E137D00AFFC22 /* CheckoutRowView.swift */; };
-		94882BA2218E137D00AFFC22 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882B9E218E137D00AFFC22 /* CheckoutViewController.swift */; };
-		94882BA4218E150F00AFFC22 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882BA3218E150F00AFFC22 /* SettingsViewController.swift */; };
-		94882BA6218E152500AFFC22 /* PaymentContextFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94882BA5218E152500AFFC22 /* PaymentContextFooterView.swift */; };
+		949806F62193441E0047B767 /* apiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949806F52193441E0047B767 /* apiClient.swift */; };
 		94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */; };
 		94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEBE2121134BA200BDABE5 /* ViewController.swift */; };
 		94EEBE2521134BA200BDABE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EEBE2321134BA200BDABE5 /* Main.storyboard */; };
@@ -49,17 +44,12 @@
 		9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewCell.swift; sourceTree = "<group>"; };
 		9432BFE0217C04C800871AA1 /* cartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewController.swift; sourceTree = "<group>"; };
 		94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schoolSelectionViewController.swift; sourceTree = "<group>"; };
+		946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapLocationViewController.swift; sourceTree = "<group>"; };
 		9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItemTableViewCell.swift; sourceTree = "<group>"; };
 		94742BE7216EB86000651C00 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menuTableViewController.swift; path = /Users/alexstanford/Desktop/Programa/Swift/onCamp/CampusFoodDeliveryApp/menuTableViewController.swift; sourceTree = "<absolute>"; };
 		948059CA2131B6070013F642 /* signupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
-		94882B98218E075800AFFC22 /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
-		94882B9B218E137C00AFFC22 /* BrowseProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseProductsViewController.swift; sourceTree = "<group>"; };
-		94882B9C218E137C00AFFC22 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		94882B9D218E137D00AFFC22 /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
-		94882B9E218E137D00AFFC22 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
-		94882BA3218E150F00AFFC22 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		94882BA5218E152500AFFC22 /* PaymentContextFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentContextFooterView.swift; sourceTree = "<group>"; };
+		949806F52193441E0047B767 /* apiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiClient.swift; sourceTree = "<group>"; };
 		94EEBE1C21134BA200BDABE5 /* CampusFoodDeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusFoodDeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94EEBE2121134BA200BDABE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,20 +94,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		94882B9A218E135A00AFFC22 /* Stripe */ = {
-			isa = PBXGroup;
-			children = (
-				94882B9B218E137C00AFFC22 /* BrowseProductsViewController.swift */,
-				94882B9C218E137C00AFFC22 /* Buttons.swift */,
-				94882B9D218E137D00AFFC22 /* CheckoutRowView.swift */,
-				94882BA3218E150F00AFFC22 /* SettingsViewController.swift */,
-				94882B9E218E137D00AFFC22 /* CheckoutViewController.swift */,
-				94882BA5218E152500AFFC22 /* PaymentContextFooterView.swift */,
-				94882B98218E075800AFFC22 /* MyAPIClient.swift */,
-			);
-			path = Stripe;
-			sourceTree = "<group>";
-		};
 		94EEBE1321134BA200BDABE5 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +119,7 @@
 			children = (
 				94EEBE2321134BA200BDABE5 /* Main.storyboard */,
 				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
+				946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */,
 				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
 				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
 				9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */,
@@ -153,7 +130,7 @@
 				94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */,
 				94EEBE462114D3E400BDABE5 /* homeScreenViewController.swift */,
 				94EEBE2121134BA200BDABE5 /* ViewController.swift */,
-				94882B9A218E135A00AFFC22 /* Stripe */,
+				949806F52193441E0047B767 /* apiClient.swift */,
 				94EEBE2921134BA200BDABE5 /* Assets.xcassets */,
 				94EEBE2B21134BA200BDABE5 /* LaunchScreen.storyboard */,
 				94EEBE2E21134BA200BDABE5 /* Info.plist */,
@@ -327,25 +304,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94882BA0218E137D00AFFC22 /* Buttons.swift in Sources */,
 				94EEBE452114D2A600BDABE5 /* loginScreenViewController.swift in Sources */,
 				9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */,
-				94882B99218E075800AFFC22 /* MyAPIClient.swift in Sources */,
 				94EEBE472114D3E400BDABE5 /* homeScreenViewController.swift in Sources */,
 				948059CB2131B6070013F642 /* signupViewController.swift in Sources */,
 				94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */,
 				94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */,
 				9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */,
-				94882BA1218E137D00AFFC22 /* CheckoutRowView.swift in Sources */,
 				94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */,
-				94882BA2218E137D00AFFC22 /* CheckoutViewController.swift in Sources */,
 				94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */,
-				94882B9F218E137D00AFFC22 /* BrowseProductsViewController.swift in Sources */,
+				949806F62193441E0047B767 /* apiClient.swift in Sources */,
+				946BC2F221B45EC1009E3FA3 /* mapLocationViewController.swift in Sources */,
 				9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */,
 				94EEBE2821134BA200BDABE5 /* CampusFoodDeliveryApp.xcdatamodeld in Sources */,
 				94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */,
-				94882BA4218E150F00AFFC22 /* SettingsViewController.swift in Sources */,
-				94882BA6218E152500AFFC22 /* PaymentContextFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

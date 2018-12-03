@@ -13,14 +13,18 @@ import SwiftyJSON
 class loginScreenViewController: UIViewController {
     
     
-    let url = "https://905f9a4b.ngrok.io/users"
+    let url = "https://889584a4.ngrok.io/users"
     //var getUrlVC = loginScreenViewController()
     var userObjects = [[String:AnyObject]]()
     @IBOutlet var schoolButtons: [UIButton]!
     
+    var headers: HTTPHeaders = [:]
+    
+    
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
     
+    @IBOutlet weak var loginErrorLabel: UILabel!
     
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
@@ -48,6 +52,13 @@ class loginScreenViewController: UIViewController {
     
     //GET request filtered
     func getUser(eml: String, pwd: String, url: String){
+        //let url = getUrlVC.url
+        let params = [
+            "email": eml,
+            "password": pwd
+        ]
+        //Alamofire.request(url, method: .post, parameters: params).responseJSON{ response in
+            //switch response.result {
         Alamofire.request(url).authenticate(user: eml, password: pwd).responseJSON{ response in
             switch response.result {
             case .success:
@@ -62,6 +73,8 @@ class loginScreenViewController: UIViewController {
                     if(value == eml){
                         print("Successful GET request")
                         self.performSegue(withIdentifier: "loginToHomeSegue", sender: Any?.self)
+                    }else{
+                        self.loginErrorLabel.text! = "Invalid Credentials"
                     }
                 }
                 

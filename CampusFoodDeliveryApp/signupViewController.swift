@@ -175,8 +175,14 @@ class signupViewController: UIViewController {
     
     func getUser(eml: String, pwd: String, url: String){
         let url = getUrlVC.url
-        Alamofire.request(url).authenticate(user: eml, password: pwd).responseJSON{ response in
+        var params = [
+        "email": eml,
+        "password": pwd
+        ]
+        Alamofire.request(url, method: .post, parameters: params).responseJSON{ response in
             switch response.result {
+        //Alamofire.request(url).authenticate(user: eml, password: pwd).responseJSON{ response in
+            //switch response.result {
             case .success:
                 let jsonRes = JSON(response.result.value!)
                 

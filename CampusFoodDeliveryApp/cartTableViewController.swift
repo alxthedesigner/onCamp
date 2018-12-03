@@ -18,10 +18,12 @@ class cartTableViewController: UITableViewController{
     
     var passItem : String!
     var passDesc : String!
-    var passPrice : Double!
+    var passPrice : Double?
     //var passId : String!
+    var passPriceTotal : Double! = 0.00
     
     var counter : Int = 0
+    var prod : ProductMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,40 +52,52 @@ class cartTableViewController: UITableViewController{
         return productList!.count
     }
 
-    var prod = ProductMO()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cartIdentifier, for: indexPath) as? cartTableViewCell
         
         prod = productList![indexPath.row]
-
+        
+        passPriceTotal?+=prod.price
+        print(passPriceTotal)
         
         cell!.cartItemLabel.text = prod.item
         cell!.cartPriceLabel.text = String(prod.price)
+        
         
         return cell!
     }
  
     
     @IBAction func submitOrderButton(_ sender: UIBarButtonItem) {
-        
-        let product = prod.item
-        let price = prod.price
-        let checkoutViewController = CheckoutViewController(product: (product)!,
+        print("Button pressed!")
+        //let product = prod.item
+        //let price = prod.price
+        /*let checkoutViewController = CheckoutViewController(product: (product)!,
                                                             price: Int(price),
-                                                            settings: SettingsViewController().settings)
-        self.navigationController?.pushViewController(checkoutViewController, animated: true)
+                                                            settings: SettingsViewController().settings)*/
+        //self.navigationController?.pushViewController(checkoutViewController, animated: true)
+        if(passPriceTotal > 0.00){
+            performSegue(withIdentifier: "cartToMapSegue", sender: UIButton.self)
+        }
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == ""){
-            let vc = segue.destination as! ViewController
+        if(segue.identifier == "cartToMapSegue"){
+            /*let vc = segue.destination as! ViewController
             
             vc.retrieveItem = passItem
             vc.retrieveDesc = passDesc
             vc.retrievePrice = passPrice
-            //vc.itemId = passId
+            //vc.itemId = passId*/
+            
+            let vc = segue.destination as! mapLocationViewController
+            if(passPriceTotal >= 0.00){
+                vc.priceToPass = passPriceTotal!
+            }
+            //vc.priceToPass = passPriceTotal!
+            
         }
     }
     
@@ -97,29 +111,20 @@ class cartTableViewController: UITableViewController{
      */
  
 
-    
+    // Swipe-to-delete
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
  
             //productList = CoreDataHandler.fetchProduct()
+            passPriceTotal?-=prod.price
             CoreDataHandler.deleteProduct()
             productList!.remove(at: indexPath.row)
             cartTable.deleteRows(at: [indexPath], with: .automatic)
             
+            
+            print(passPriceTotal)
         }
     }
- 
-    
-
-/*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
