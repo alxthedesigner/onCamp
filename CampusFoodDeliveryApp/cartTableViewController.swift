@@ -28,6 +28,7 @@ class cartTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cartTable.rowHeight = 90.0
+        
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
 
@@ -63,7 +64,7 @@ class cartTableViewController: UITableViewController{
         
         cell!.cartItemLabel.text = prod.item
         cell!.cartPriceLabel.text = String(prod.price)
-        
+        cell!.itemImage.image = UIImage(named: prod.item!)
         
         return cell!
     }
@@ -116,12 +117,12 @@ class cartTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
  
-            //productList = CoreDataHandler.fetchProduct()
-            passPriceTotal?-=prod.price
+            //passPriceTotal?-=prod.price
             CoreDataHandler.deleteProduct()
             productList!.remove(at: indexPath.row)
+            //passPriceTotal?-=prod.price
             cartTable.deleteRows(at: [indexPath], with: .automatic)
-            
+
             
             print(passPriceTotal)
         }

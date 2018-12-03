@@ -17,7 +17,7 @@ class menuTableViewController: UITableViewController{
     
     var getObjects = [[String:AnyObject]]()
     let identifier = "menuCellIdentifier"
-    let url = "https://889584a4.ngrok.io/menu"
+    let url = "https://c4350c10.ngrok.io/menu"
     
     @IBAction func viewCartPressed(_ sender: Any) {
         performSegue(withIdentifier: "toCartSegue", sender: Any?.self)
@@ -67,6 +67,7 @@ class menuTableViewController: UITableViewController{
         passDesc = current.descLabel.text!
         passPrice = NSString(string: current.priceLabel.text!).doubleValue
         
+        
         print(passItem + passDesc)
         print(passPrice)
         performSegue(withIdentifier: "showItemDetails", sender: (Any).self)
@@ -82,6 +83,7 @@ class menuTableViewController: UITableViewController{
             cell?.itemLabel.text = dict["item"] as? String
             cell?.descLabel.text = dict["description"] as? String
             cell?.priceLabel.text = String(dict["price"] as! Double)
+            cell?.itemImage.image = UIImage(named: (dict["item"] as? String)!)
             print(destPlace)
                 
                 //passId = dict["id"] as! UUID

@@ -368,8 +368,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="7PC-Rz-2zQ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="7xS-4Z-38O">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="srI-bg-omd">
+                                        <connections>
+                                            <segue destination="ReR-u6-IJ9" kind="show" id="1uB-i8-2yO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7fQ-Mb-H7O">
-                            <rect key="frame" x="0.0" y="118" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="162" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem title="Select Delivery Location" width="409" id="WZz-4U-cUr">
@@ -381,7 +394,7 @@
                         </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCellIdentifier" rowHeight="90" id="h1h-c8-vJ8" customClass="cartTableViewCell" customModule="CampusFoodDeliveryApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h1h-c8-vJ8" id="Kau-gz-j4d">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -408,7 +421,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBq-Um-Vt9">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBq-Um-Vt9">
                                             <rect key="frame" x="175" y="-1" width="129" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -417,6 +430,7 @@
                                 <connections>
                                     <outlet property="cartItemLabel" destination="XWY-Ss-g8p" id="KWX-sp-TFZ"/>
                                     <outlet property="cartPriceLabel" destination="LSf-gT-X6N" id="5lc-iw-x4y"/>
+                                    <outlet property="itemImage" destination="KBq-Um-Vt9" id="PoF-c4-cFn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -959,7 +973,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NVg-AO-F4K"/>
-        <segue reference="XJI-aR-7dm"/>
-        <segue reference="qVR-sU-y0J"/>
+        <segue reference="3jN-iT-MU4"/>
+        <segue reference="D3z-bU-uvj"/>
     </inferredMetricsTieBreakers>
 </document>

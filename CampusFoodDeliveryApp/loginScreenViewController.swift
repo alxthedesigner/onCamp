@@ -13,7 +13,7 @@ import SwiftyJSON
 class loginScreenViewController: UIViewController {
     
     
-    let url = "https://889584a4.ngrok.io/users"
+    let url = "https://c4350c10.ngrok.io/users"
     //var getUrlVC = loginScreenViewController()
     var userObjects = [[String:AnyObject]]()
     @IBOutlet var schoolButtons: [UIButton]!

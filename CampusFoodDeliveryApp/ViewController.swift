@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         item.text? = retrieveItem
         descript.text? = retrieveDesc
         pricey.text? = String(retrievePrice)
+        
     }
 
     override func didReceiveMemoryWarning() {

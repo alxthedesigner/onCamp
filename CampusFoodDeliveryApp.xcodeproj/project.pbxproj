@@ -118,11 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				94EEBE2321134BA200BDABE5 /* Main.storyboard */,
-				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
-				946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */,
-				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
-				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
 				9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */,
+				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
+				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
+				946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */,
+				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
 				94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */,
 				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
 				94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */,
