@@ -103,27 +103,22 @@ class cartTableViewController: UITableViewController{
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-     */
- 
-
     // Swipe-to-delete
     // Override to support editing the table view.
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
- 
-            //passPriceTotal?-=prod.price
+            passPriceTotal?-=prod.price
             CoreDataHandler.deleteProduct()
             productList!.remove(at: indexPath.row)
-            //passPriceTotal?-=prod.price
-            cartTable.deleteRows(at: [indexPath], with: .automatic)
 
-            
+            cartTable.deleteRows(at: [indexPath], with: .automatic)
+   
             print(passPriceTotal)
         }
     }

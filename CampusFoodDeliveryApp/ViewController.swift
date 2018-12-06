@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var item: UILabel!
     @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var pricey: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     
     var retrieveItem : String = ""
     var retrieveDesc : String = ""
     var retrievePrice : Double = 0
     //var itemId = UUID()
+    var retrieveImage : UIImage = UIImage(named: "defaultImage")!
+    
     @IBOutlet weak var addedLabel: UILabel!
     
     override func viewDidLoad() {
@@ -29,7 +32,7 @@ class ViewController: UIViewController {
         item.text? = retrieveItem
         descript.text? = retrieveDesc
         pricey.text? = String(retrievePrice)
-        
+        img.image = retrieveImage
     }
 
     override func didReceiveMemoryWarning() {

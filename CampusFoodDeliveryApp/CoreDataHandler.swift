@@ -44,17 +44,32 @@ class CoreDataHandler: NSObject {
         
         let context = objectContext()
         var product:[ProductMO]? = nil
+        /*var products = [ProductMO]()
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        request.returnsObjectsAsFaults = false
+        */
         
+        
+        
+   
         do  {
             product = try context.fetch(ProductMO.fetchRequest())
+            /*var product = try context.fetch(request)
+            
+            for prod in product as! [NSManagedObject] {
+                print(prod)
+                products.append(prod as! ProductMO)
+            }*/
         }
         catch
         {
             print("Could not fetch product")
             return product
+            //return products
         }
         print("Product fetched sucessfully!")
         return product
+        //return products
         
     }
     
@@ -68,7 +83,7 @@ class CoreDataHandler: NSObject {
         
         do{
             let deleteThis = try context.fetch(request)
-
+            //STOP LOOPING
             for obj in deleteThis as! [NSManagedObject] {
             context.delete(obj)
             }

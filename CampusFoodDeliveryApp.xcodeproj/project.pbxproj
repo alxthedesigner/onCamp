@@ -12,6 +12,7 @@
 		9432BFE1217C04C800871AA1 /* cartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432BFE0217C04C800871AA1 /* cartTableViewController.swift */; };
 		94680CF6212E2BD1006D8F1C /* schoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */; };
 		946BC2F221B45EC1009E3FA3 /* mapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */; };
+		946BC2F421B58094009E3FA3 /* finalizeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BC2F321B58094009E3FA3 /* finalizeOrderViewController.swift */; };
 		9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */; };
 		94742BE4216E883B00651C00 /* menuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */; };
 		94742BE8216EB86000651C00 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94742BE7216EB86000651C00 /* menuTableViewController.swift */; };
@@ -45,6 +46,7 @@
 		9432BFE0217C04C800871AA1 /* cartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartTableViewController.swift; sourceTree = "<group>"; };
 		94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schoolSelectionViewController.swift; sourceTree = "<group>"; };
 		946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapLocationViewController.swift; sourceTree = "<group>"; };
+		946BC2F321B58094009E3FA3 /* finalizeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalizeOrderViewController.swift; sourceTree = "<group>"; };
 		9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItemTableViewCell.swift; sourceTree = "<group>"; };
 		94742BE7216EB86000651C00 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menuTableViewController.swift; path = /Users/alexstanford/Desktop/Programa/Swift/onCamp/CampusFoodDeliveryApp/menuTableViewController.swift; sourceTree = "<absolute>"; };
@@ -118,17 +120,18 @@
 			isa = PBXGroup;
 			children = (
 				94EEBE2321134BA200BDABE5 /* Main.storyboard */,
-				9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */,
+				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
 				9432BFDE217C04AE00871AA1 /* cartTableViewCell.swift */,
 				9432BFE0217C04C800871AA1 /* cartTableViewController.swift */,
-				946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */,
-				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
-				94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */,
-				94EEBE1F21134BA200BDABE5 /* AppDelegate.swift */,
+				9470B5ED2184CB6400D302F6 /* CoreDataHandler.swift */,
+				946BC2F321B58094009E3FA3 /* finalizeOrderViewController.swift */,
+				94EEBE462114D3E400BDABE5 /* homeScreenViewController.swift */,
 				94EEBE442114D2A600BDABE5 /* loginScreenViewController.swift */,
+				946BC2F121B45EC1009E3FA3 /* mapLocationViewController.swift */,
+				94742BE3216E883B00651C00 /* menuItemTableViewCell.swift */,
+				94742BE7216EB86000651C00 /* menuTableViewController.swift */,
 				948059CA2131B6070013F642 /* signupViewController.swift */,
 				94680CF5212E2BD1006D8F1C /* schoolSelectionViewController.swift */,
-				94EEBE462114D3E400BDABE5 /* homeScreenViewController.swift */,
 				94EEBE2121134BA200BDABE5 /* ViewController.swift */,
 				949806F52193441E0047B767 /* apiClient.swift */,
 				94EEBE2921134BA200BDABE5 /* Assets.xcassets */,
@@ -308,6 +311,7 @@
 				9470B5EE2184CB6400D302F6 /* CoreDataHandler.swift in Sources */,
 				94EEBE472114D3E400BDABE5 /* homeScreenViewController.swift in Sources */,
 				948059CB2131B6070013F642 /* signupViewController.swift in Sources */,
+				946BC2F421B58094009E3FA3 /* finalizeOrderViewController.swift in Sources */,
 				94EEBE2221134BA200BDABE5 /* ViewController.swift in Sources */,
 				94EEBE2021134BA200BDABE5 /* AppDelegate.swift in Sources */,
 				9432BFDF217C04AE00871AA1 /* cartTableViewCell.swift in Sources */,

@@ -14,8 +14,9 @@ class mapLocationViewController: UIViewController{
     @IBOutlet weak var mapOfCampus: MKMapView!
     var locationManager = CLLocationManager()
     var currentLocation = CLLocationCoordinate2D()
-    var priceToPass = Double()
-
+    
+    var priceToPass : Double = 0.00
+    var locationNamePass : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class mapLocationViewController: UIViewController{
         addAnnotations()
         self.locationManager.requestWhenInUseAuthorization()
         
+        print("This price was passed to map: \(priceToPass)")
         /*if(CLLocationManager.locationServicesEnabled()){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -86,6 +88,7 @@ class mapLocationViewController: UIViewController{
         mapOfCampus.addAnnotation(kentuckyAnnotation)
         mapOfCampus.addAnnotation(mccullenAnnotation)
     }
+    
     private func selectLocation(){
         
     }
@@ -95,13 +98,22 @@ class mapLocationViewController: UIViewController{
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let finalView = segue.destination as! finalizeOrderViewController
+        if(segue.identifier == "finalizeOrderSegue"){
+            finalView.finalPrice = priceToPass
+            finalView.locationName = locationNamePass
+        }
     }
-    */
+ 
+
 
 }
+
+
+
+
 
 extension mapLocationViewController : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -124,10 +136,13 @@ extension mapLocationViewController : CLLocationManagerDelegate{
     }
 }
 
+
 extension mapLocationViewController : MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         print("annotation selected!")
+        locationNamePass = ((view.annotation?.title)!)!
+        performSegue(withIdentifier: "finalizeOrderSegue", sender: Any.self)
     }
     
 }
