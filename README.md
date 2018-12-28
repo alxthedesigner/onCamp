@@ -7,10 +7,10 @@ PostgreSQL database
 Vape server
 The onCamp app itself
 
-SETTING UP THE VAPE SERVER:
+## SETTING UP THE VAPE SERVER:
 The Vape server equipped with this app uses the Vapor framework, which enables Swift, a coding language, to be used as a backend language. These are the steps to running the Vape server:
 1.	Install Ngrok via https://ngrok.com/ or npm. 
-2.	In the terminal, run: ngrok http 8080.
+2.	In the terminal, run `ngrok http 8080`.
 This tells ngrok to tunnel your port 8080 to a randomized http and https URL in order for the Vape server to access your database data
 3.	Copy the https URL and insert it into the url variable within the onCamp app in the menuTableViewController.swift file, then append the /menu router.
 Example: let url = "https://dc966153.ngrok.io/menu"
@@ -19,7 +19,7 @@ This routes to the menu items in the database and populates the view upon runnin
 5.	Run the Vape server in Xcode. The server should now be running through port 8080 to the ngrok url routing to the menu items and users from the postgres database!
 
 
-SETTING UP & VIEWING THE DATABASE:
+## SETTING UP & VIEWING THE DATABASE:
 This app uses a PostgreSQL database that can be easily manipulated and viewed through the Postico MacOS app. 
 1.	Download postgreSQL via https://www.postgresql.org/download/ 
 2.	Download free version of Postico via https://eggerapps.at/postico/ , or get the paid version from the Mac App Store(optional)
