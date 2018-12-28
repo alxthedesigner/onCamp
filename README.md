@@ -29,7 +29,9 @@ Postico is optional, but it is recommended to easily traverse the database with 
 - Set Port to 5432
 - Set User to your name
 - Connect
-4.	Create two tables: one named MenuData and one named UserData. These are where the Vape routes connect. Populate the MenuData table with menu items for the app to make `GET` requests on via Alamofire in the menuTableViewController.swift file.
-The app is currently set to `GET` the item, price, description, and restaurant, but an id column with the UUID datatype is needed to uniquely identify each item.
+4.	Create two tables: one named MenuData and one named UserData. These are where the Vape routes connect. 
+ - Populate the MenuData table with menu items for the app to make `GET` requests on via Alamofire in the menuTableViewController.swift file. The app is currently set to `GET` the item, price, description, and restaurant, but an id column with the UUID datatype is needed to uniquely identify each item.
 
-The UserData table should remain empty with the name, email, password, and school columns along with the UUID id column to store users, which will `POST` there upon signing up when the user reaches the signupViewController.
+ - The UserData table should remain empty with the name, email, password, and school columns along with the UUID id column to store users, which will `POST` there upon signing up when the user reaches the signupViewController.
+ 
+Finally, run the onCamp app and it should pull all the menu items from your database and add users
